@@ -15,6 +15,10 @@ vertical = int(position[1])
 selected_row = map[vertical - 1]
 selected_row[horizontal - 1] = input("Please enter what u need to put there: ")
 
+# or u can do this way.
+# map[vertical - 1][horizontal - 1] = input("Please enter what u need to put there: ")
+#
+
 #Write your code above this row 👆
 
 # 🚨 Don't change the code below 👇

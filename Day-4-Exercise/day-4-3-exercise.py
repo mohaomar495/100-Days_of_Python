@@ -1,5 +1,5 @@
 # 🚨 Don't change the code below 👇
-row1 = ["🤣","🤣", "🤣"]
+row1 = ["🤣","🤣","🤣"]
 row2 = ["🤣","🤣","🤣"]
 row3 = ["🤣","🤣","🤣"]
 map = [row1, row2, row3]

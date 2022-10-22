@@ -9,11 +9,12 @@ position = input("Where do you want to put the treasure? ")
 
 #Write your code below this row 👇
 
-horizontal = int(position[0])
-vertical = int(position[1])
+vertical = int(position[0])
+horizontal = int(position[1])
 
-selected_row = map[vertical - 1]
-selected_row[horizontal - 1] = input("Please enter what u need to put there: ")
+# first we need to access the position at the column level then we will specify its row position i=within that column
+selected_column = map[vertical - 1]
+selected_column[horizontal - 1] = input("Please enter what u need to put there: ")
 
 # or u can do this way.
 # map[vertical - 1][horizontal - 1] = input("Please enter what u need to put there: ")

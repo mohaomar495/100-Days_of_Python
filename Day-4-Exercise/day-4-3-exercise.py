@@ -13,7 +13,7 @@ vertical = int(position[0])
 horizontal = int(position[1])
 
 # first we need to access the position at the column level then we will specify its row position i=within that column
-selected_column = map[horizontal - 1] 
+selected_row = map[horizontal - 1] 
 selected_column[vertical - 1] = input("Please enter what u need to put there: ")
 
 # or u can do this way.

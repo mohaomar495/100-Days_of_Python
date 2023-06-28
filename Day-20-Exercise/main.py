@@ -29,8 +29,16 @@ while is_game_on:
     snake.mave()
     if snake.head.distance(food) < 15:
         food.create_food()
+        snake.extend_tail()
         score.increase_score()
-    if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
+
+    if snake.head.xcor() > 280 or snake.head.xcor() < -300 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
         is_game_on = False
         score.game_over()
+
+    for segment in snake.segments[1:]:
+        if snake.head.distance(segment) < 10:
+            is_game_on = False
+            score.game_over()
+
 screen.exitonclick()

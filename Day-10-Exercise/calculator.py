@@ -1,49 +1,58 @@
 from replit import clear
 from art import logo
-print(logo)
 
-def add (i, j):
-  """Returns the addition of two given inputs"""
-  return i + j
-def subtract(i , j):
-  """Returns the subtraction of two given inputs"""
-  return i - j
-def mult(i , j):
-  """Returns the multiplication of two given inputs"""
-  return i * j
-def div(i , j):
-  """Returns the division of two given inputs"""
-  return i / j
+print(logo)
+def addition(n, m):
+  return n + m
+
+
+def subtraction(n, m):
+  return n - m
+
+
+def multiplication(n, m):
+  return n * m
+
+
+def division(n , m):
+  if m != 0:
+      return n / m
+  return
+
 
 operations = {
-  "+":add,
-  "-":subtract,
-  "*":mult,
-  "/":div
-}
+          "+": addition,
+          "-": subtraction,
+          "*": multiplication,
+          "/": division
+      }
+
 
 def calculator():
-  """Here is calculator which can calculate most of the math basics using +/-/*/'/(division)'."""
-  i = float(input("Enter the first number: "))
-
-  for sympol in operations:
-    print(sympol)
-
   should_continue = True
-
+  first_num = float(input("What's the first number?: "))
+  for symbol in operations:
+      print(symbol)
   while should_continue:
-    choice = input("Pick an operation: ")
-    j = float(input("Enter the next number: "))
-    calculation = operations[choice]
-    result = calculation(i, j)
+      operation = input("Pick an operation: ")
+      second_num = float(input("What's the next number?: "))
 
-    print(f"{i} {choice} {j} = {result}")
+      result = operations[operation](first_num, second_num)
+      print(f"{first_num} {operation} {second_num} = {result}")
 
-    To_continue = input("Type 'y' to continue calculating with the current {result}, or type 'n' to start a new calculation: ").lower()
-    if To_continue == "y":
-      i = result
-    else:
-      should_continue = False
-      clear()
-      calculator()
-calculator()
+      another_try = input("Type 'y' to continue calculating with 10.0, or type 'n' to start a new calculations: ").lower()
+
+      if another_try == "y":
+          first_num = result
+      else:
+          should_continue = False
+          clear()
+          calculator()
+
+
+def main():
+  calculator()
+
+
+if __name__ == "__main__":
+  main()
